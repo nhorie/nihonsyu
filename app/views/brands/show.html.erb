@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<div class="table-responsive">
+  <table class="table">
+    <tr>
+        <td>銘柄</td>
+        <td><%= @brand.brand_name %></td>
+    </tr>
+    <tr>
+        <td>エリア</td>
+        <td><%= get_region_name(@brand.prefecture_id) %></td>
+    </tr>
+    <tr>
+        <td>都道府県</td>
+        <td><%= get_prefecture_name(@brand.prefecture_id) %></td>
+    </tr>
+    <tr>
+        <td>タイプ</td>
+        <td><%= @brand.type_id_i18n %></td>
+    </tr>
+    <tr>
+        <td>評価</td>
+        <td><%= @brand.evaluation_i18n %></td>
+    </tr>
+    <tr>
+        <td>コメント</td>
+        <td><%= simple_format(@brand.comment) %></td>
+    </tr>
+  </table>
+</div>
+
+<br>
+
+<%= link_to '更新', edit_brand_path(@brand) %> |
+<%= link_to '一覧', brands_path %>

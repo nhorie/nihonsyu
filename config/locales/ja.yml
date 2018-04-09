@@ -1,0 +1,21 @@
+ja:
+  enums:
+    brand:
+      type_id:
+        jyunmai_daiginjyo: 純米大吟醸
+        jyunmai_ginjyo: 純米吟醸
+        jyunmai: 純米
+        daiginjyo: 大吟醸
+        ginjyo: 吟醸
+        honjyozo: 本醸造
+      evaluation:
+        star_1: ★
+        star_2: ★★
+        star_3: ★★★
+        star_4: ★★★★
+        star_5: ★★★★★★
+        star_6: ★★★★★★★
+        star_7: ★★★★★★★★
+        star_8: ★★★★★★★★★
+        star_9: ★★★★★★★★★★
+        star_10: ★★★★★★★★★★★

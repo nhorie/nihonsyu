@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Brands</h1>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>銘柄</th>
+        <th>エリア</th>
+        <th>都道府県</th>
+        <th>タイプ</th>
+        <th>評価</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @brands.each do |brand| %>
+        <tr>
+          <td><%= link_to brand.brand_name, brand_path(brand) %></td>
+          <td><%= get_region_name(brand.prefecture_id) %></td>
+          <td><%= get_prefecture_name(brand.prefecture_id) %></td>
+          <td><%= brand.type_id_i18n %></td>
+          <td><%= brand.evaluation_i18n %></td>
+          <td><%= link_to '更新', edit_brand_path(brand) %></td>
+          <td><%= link_to '削除', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<%= link_to '新規作成', new_brand_path %>
