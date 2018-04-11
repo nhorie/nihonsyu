@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="table-responsive">
-  <table class="table">
+  <table class="table" style="table-layout:fixed;">
     <tr>
-        <td>銘柄</td>
+        <td style="width:200px;">銘柄</td>
         <td><%= @brand.brand_name %></td>
     </tr>
     <tr>
@@ -21,6 +21,10 @@
     <tr>
         <td>評価</td>
         <td><%= @brand.evaluation_i18n %></td>
+    </tr>
+    <tr>
+        <td>価格</td>
+        <td><%= @brand.price %>円</td>
     </tr>
     <tr>
         <td>コメント</td>

@@ -1,10 +1,20 @@
 class BrandsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
   # GET /brands
   # GET /brands.json
   def index
     @brands = Brand.all
+    @region = Region.all
+    if params[:search_name].present? 
+      @brands = @brands.get_by_name params[:search_name]
+    end
+    if params[:search_region].present? 
+      @brands = @brands.get_by_region params[:search_region]
+    end
+    @brands = @brands.order(sort_column + ' ' + sort_direction)
+    # @brands = Brand.search(params[:search])
   end
 
   # GET /brands/1
@@ -70,7 +80,15 @@ class BrandsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
       params.require(:brand).permit(
-        :brand_name, :prefecture_id, :type_id, :comment, :evaluation
+        :brand_name, :prefecture_id, :type_id, :comment, :evaluation, :price, :search
       )
     end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ?  params[:direction] : "asc"
+    end
+
+    def sort_column
+      Brand.column_names.include?(params[:sort]) ? params[:sort] : "price"
+    end    
 end

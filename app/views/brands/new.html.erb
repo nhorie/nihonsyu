@@ -27,6 +27,12 @@
         </td>
       </tr>
       <tr>
+        <td>価格</td>
+        <td>
+          <%= f.text_field :price, class: 'form-control' %>
+        </td>
+      </tr>      
+      <tr>
         <td>コメント</td>
         <td>
           <%= f.text_area :comment, class: 'form-control', rows: 15 %>
@@ -35,5 +41,6 @@
     </table>    
 
     <button type="submit">追加</button>
-    <%= link_to 'Back', brands_path %>
+    </br>
+    <%= link_to '一覧', brands_path %>
 <% end %>

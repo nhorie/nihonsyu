@@ -18,16 +18,7 @@ ActiveRecord::Schema.define(version: 20180409020118) do
     t.integer "type_id", limit: 1
     t.string "comment"
     t.integer "evaluation", limit: 2
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "meigaras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "meigara"
-    t.integer "prefecture_id"
-    t.integer "type_id", limit: 1
-    t.string "comment"
-    t.integer "hyoka", limit: 2
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

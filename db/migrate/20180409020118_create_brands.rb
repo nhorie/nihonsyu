@@ -6,6 +6,7 @@ class CreateBrands < ActiveRecord::Migration[5.1]
       t.integer :type_id, limit: 1
       t.string :comment
       t.integer :evaluation, limit: 2
+      t.integer :price
 
       t.timestamps
     end
