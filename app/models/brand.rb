@@ -29,6 +29,22 @@ class Brand < ApplicationRecord
     scope :get_by_region, ->(search_region) {
         joins("join prefectures on prefectures.id = brands.prefecture_id").where(:prefectures => {region_id: search_region})
     }
+    scope :get_by_type, ->(search_type) {
+        where(type_id: search_type)
+    }
+    scope :get_by_price, ->(search_min_price, search_max_price) {
+        wheresql = ""
+        if search_min_price.present?
+            wheresql += "price >= #{search_min_price}"
+        end
+        if search_max_price.present?
+            if wheresql.present?
+                wheresql += " and "
+            end
+            wheresql += "price <= #{search_max_price}" 
+        end
+        where(wheresql)
+    }
 
     def self.search(search)
         if search

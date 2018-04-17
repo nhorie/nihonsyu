@@ -35,5 +35,7 @@
 
 <br>
 
-<%= link_to '更新', edit_brand_path(@brand) %> |
-<%= link_to '一覧', brands_path %>
+<%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{edit_brand_path(@brand)}')" do %>
+<i class="fas fa-edit"></i> 更新<% end %>
+<%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{brands_path}')" do %>
+<i class="fas fa-list-ul"></i> 一覧<% end %>

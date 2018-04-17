@@ -13,6 +13,12 @@ class BrandsController < ApplicationController
     if params[:search_region].present? 
       @brands = @brands.get_by_region params[:search_region]
     end
+    if params[:search_type].present? 
+      @brands = @brands.get_by_type params[:search_type]
+    end
+    if params[:search_min_price].present? || params[:search_max_price].present?
+      @brands = @brands.get_by_price params[:search_min_price], params[:search_max_price]
+    end
     @brands = @brands.order(sort_column + ' ' + sort_direction)
     # @brands = Brand.search(params[:search])
   end
