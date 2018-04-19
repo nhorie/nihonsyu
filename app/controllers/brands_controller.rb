@@ -1,7 +1,7 @@
 class BrandsController < ApplicationController
   helper_method :sort_column, :sort_direction
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
-  before_action :detect_devise_variant
+  before_action :devise_variant
 
   # GET /brands
   # GET /brands.json
@@ -99,7 +99,7 @@ class BrandsController < ApplicationController
       Brand.column_names.include?(params[:sort]) ? params[:sort] : "price"
     end
 
-    def detect_devise_variant
+    def devise_variant
       if request.from_smartphone?
         request.variant = :mobile
       end

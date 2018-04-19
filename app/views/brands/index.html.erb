@@ -10,7 +10,8 @@
     <%= select_tag(:search_type,  options_for_select(Brand.type_ids_i18n.invert, params[:search_type]), :include_blank => true) %>&emsp;
     <%= label_tag :search_name, "価格：" %>
     <%= text_field_tag :search_min_price, params[:search_min_price] %>〜<%= text_field_tag :search_max_price, params[:search_max_price] %>&emsp;
-    <%= submit_tag '検索',:class => 'btn btn-secondary' %>
+    <%= submit_tag '検索',:class => 'btn btn-secondary' do %>
+    <i class="far fa-search"></i><% end %>
   </p>
   <% end %>
 

@@ -1,5 +1,6 @@
+
 <%= form_for(@brand) do |f| %>
-    <table class="table table_width">
+    <table class="table">
       <tr>
         <td>銘柄名</td>
         <td>
@@ -9,7 +10,7 @@
       <tr>
         <td>都道府県</td>
         <td>
-          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture_name, include_blank: true, class: 'form-control' %>
+          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :prefecture_name, include_blank: true, class: 'form-control col-md-2' %>
         </td>
       </tr>
       <tr>
@@ -29,7 +30,7 @@
         <td>
           <%= f.text_field :price, class: 'form-control' %>
         </td>
-      </tr>      
+      </tr>
       <tr>
         <td>コメント</td>
         <td>
@@ -38,7 +39,11 @@
       </tr>
     </table>    
 
-    <button type="submit", class="btn btn-secondary"><i class="far fa-plus-square"></i> 新規作成</button>
+    <button type="submit", class="btn btn-secondary"><i class="far fa-edit"></i> 更新</button>
+    <%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{brand_path(@brand)}')" do %>
+    <i class="far fa-file-alt"></i> 詳細<% end %>
     <%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{brands_path}')" do %>
     <i class="fas fa-list-ul"></i> 一覧<% end %>
 <% end %>
+<script>
+</script>
