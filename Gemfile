@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'enum_help'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'woothee'
+gem 'rack-user_agent'
