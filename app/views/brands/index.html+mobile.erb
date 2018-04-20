@@ -44,7 +44,7 @@
               <td><%= get_region_name(brand.prefecture_id) %></td>
               <td><%= get_prefecture_name(brand.prefecture_id) %></td>
               <td><%= brand.type_id_i18n %></td>
-              <td><%= brand.evaluation_i18n %></td>
+              <td><%= brand.evaluation %></td>
               <td><%= brand.price %>円</td>
               <td>
                 <%= button_to edit_brand_path(brand), :class => 'btn_mobile btn-secondary', :method => :get do %>
