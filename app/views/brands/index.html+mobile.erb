@@ -18,7 +18,7 @@
     <%= text_field_tag :search_min_price, params[:search_min_price], :size => 6 %>〜<%= text_field_tag :search_max_price, params[:search_max_price], :size => 6 %>&emsp;
   </p>
   <p>
-    <button type="submit", class="btn btn-secondary"><i class="fas fa-search"></i> 検索</button>
+    <button type="submit", class="btn btn-success"><i class="fas fa-search"></i> 検索</button>
   </p>
   <% end %>
 
@@ -30,11 +30,11 @@
             <th width="180px">銘柄</th>
             <th width="80px">エリア</th>
             <th width="90px">都道府県</th>
-            <th width="130px">タイプ</th>
-            <th width="100px"><%= sortable "evaluation", "評価" %></th>
+            <th width="120px">タイプ</th>
+            <th width="70px"><%= sortable "evaluation", "評価" %></th>
             <th width="100px"><%= sortable "price", "価格" %></th>
-            <th width="100px"></th>
-            <th width="100px"></th>
+            <th width="60px">更新</th>
+            <th width="60px">削除</th>
           </tr>
         </thead>
         <tbody>
@@ -44,14 +44,14 @@
               <td><%= get_region_name(brand.prefecture_id) %></td>
               <td><%= get_prefecture_name(brand.prefecture_id) %></td>
               <td><%= brand.type_id_i18n %></td>
-              <td><%= brand.evaluation %></td>
+              <td><%= brand.evaluation_i18n %></td>
               <td><%= brand.price %>円</td>
               <td>
-                <%= button_to edit_brand_path(brand), :class => 'btn_mobile btn-secondary', :method => :get do %>
+                <%= button_to edit_brand_path(brand), :class => 'btn-sm btn-success', :method => :get do %>
                 <i class="far fa-edit"></i><% end %>
               </td>
               <td>
-                <%= button_to brand, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn_mobile btn-secondary' do %>
+                <%= button_to brand, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn-sm btn-success' do %>
                 <i class="far fa-trash-alt"></i><% end %>
               </td>
             </tr>
@@ -61,6 +61,6 @@
     </div>
   </div>
   <br>
-  <%= button_to new_brand_path, :class => 'btn btn-secondary', :method => :get do %>
+  <%= button_to new_brand_path, :class => 'btn btn-success', :method => :get do %>
   <i class="far fa-plus-square"></i> 新規作成<% end %>
 </div>

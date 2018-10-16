@@ -4,7 +4,7 @@
       <tr>
         <td>銘柄名</td>
         <td>
-          <%= f.text_field :brand_name, class: 'form-control' %>
+          <%= f.text_field :brand_name, class: 'form-control has-success' %>
         </td>
       </tr>
       <tr>
@@ -39,10 +39,10 @@
       </tr>
     </table>    
 
-    <button type="submit", class="btn btn-secondary"><i class="far fa-edit"></i> 更新</button>
-    <%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{brand_path(@brand)}')" do %>
+    <button type="submit", class="btn btn-success"><i class="far fa-edit"></i> 更新</button>
+    <%= button_tag type: 'button', :class => 'btn btn-success', onclick: "link_to('#{brand_path(@brand)}')" do %>
     <i class="far fa-file-alt"></i> 詳細<% end %>
-    <%= button_tag type: 'button', :class => 'btn btn-secondary', onclick: "link_to('#{brands_path}')" do %>
+    <%= button_tag type: 'button', :class => 'btn btn-success', onclick: "link_to('#{brands_path}')" do %>
     <i class="fas fa-list-ul"></i> 一覧<% end %>
 <% end %>
 <script>

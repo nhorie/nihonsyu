@@ -10,7 +10,7 @@
     <%= select_tag(:search_type,  options_for_select(Brand.type_ids_i18n.invert, params[:search_type]), :include_blank => true) %>&emsp;
     <%= label_tag :search_name, "価格：" %>
     <%= text_field_tag :search_min_price, params[:search_min_price] %>〜<%= text_field_tag :search_max_price, params[:search_max_price] %>&emsp;
-    <button type="submit", class="btn btn-secondary"><i class="fas fa-search"></i> 検索</button>
+    <button type="submit", class="btn btn-success"><i class="fas fa-search"></i> 検索</button>
   </p>
   <% end %>
 
@@ -39,11 +39,11 @@
               <td><%= brand.evaluation_i18n %></td>
               <td><%= brand.price %>円</td>
               <td>
-                <%= button_to edit_brand_path(brand), :class => 'btn btn-secondary', :method => :get do %>
+                <%= button_to edit_brand_path(brand), :class => 'btn btn-success', :method => :get do %>
                 <i class="far fa-edit"></i> 更新<% end %>
               </td>
               <td>
-                <%= button_to brand, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-secondary' do %>
+                <%= button_to brand, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-success' do %>
                 <i class="far fa-trash-alt"></i> 削除<% end %>
               </td>
             </tr>
@@ -53,6 +53,6 @@
     </div>
   </div>
   <br>
-  <%= button_to new_brand_path, :class => 'btn btn-secondary', :method => :get do %>
+  <%= button_to new_brand_path, :class => 'btn btn-success', :method => :get do %>
   <i class="far fa-plus-square"></i> 新規作成<% end %>
 </div>
